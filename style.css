@@ -1,58 +1,253 @@
+/* --- TEMA CLARO (Rosa Claro com Neon Suave) --- */
 body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f7f6;
-            color: #333;
-        }
-        header, main, footer {
-            max-width: 800px;
-            margin: 0 auto 20px auto;
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-        header h1 {
-            margin: 0;
-            color: #2c3e50;
-        }
-        h2 {
-            color: #34495e;
-            border-bottom: 2px solid #ecf0f1;
-            padding-bottom: 8px;
-        }
-        .tags {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .tags li {
-            background: #3498db;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        ul.projetos, ul.contatos {
-            padding-left: 20px;
-        }
-        ul.projetos li, ul.contatos li {
-            margin-bottom: 12px;
-        }
-        a {
-            color: #2980b9;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        /* Ajustes para telas menores (Celular) */
-        @media (max-width: 600px) {
-            body { padding: 10px; }
-            header, main, footer { padding: 15px; }
-        }
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #fff5f7; /* Fundo rosa bem pastel */
+    color: #4a2840; /* Texto em tom de ameixa escuro para contraste */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header, main, footer {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    /* Efeito de brilho neon suave no claro */
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.2), 0 4px 6px rgba(0, 0, 0, 0.02);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+header h1 {
+    margin: 0;
+    color: #d81b60; /* Rosa escuro marcante */
+    text-shadow: 0 0 8px rgba(216, 27, 96, 0.2);
+}
+
+h2 {
+    color: #e91e63; /* Rosa Choque sutil */
+    border-bottom: 2px solid #f8bbd0;
+    padding-bottom: 8px;
+}
+
+.tags {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags li {
+    background: #ff4081; /* Tag rosa vibrante */
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+ul.projetos, ul.contatos {
+    padding-left: 20px;
+}
+
+ul.projetos li, ul.contatos li {
+    margin-bottom: 12px;
+}
+
+a {
+    color: #ff4081;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #f50057;
+}
+
+/* Ajustes para telas menores (Celular) */
+@media (max-width: 600px) {
+    body { padding: 10px; }
+    header, main, footer { padding: 15px; }
+}
+
+.instrucao {
+    font-size: 0.9rem;
+    color: #885870;
+    margin-bottom: 15px;
+}
+
+.grid-linguagens {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.lang-card {
+    background: #ffffff;
+    border: 1px solid #f8bbd0;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-card:hover {
+    transform: translateY(-3px);
+    /* Brilho neon ao passar o mouse */
+    box-shadow: 0 0 12px rgba(255, 64, 129, 0.4);
+    border-color: #ff4081;
+}
+
+.lang-card i {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.lang-card span {
+    font-weight: 600;
+    color: #4a2840;
+    font-size: 1rem;
+}
+
+.lang-desc {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    font-size: 0.85rem;
+    color: #613d55;
+    margin: 0;
+    padding: 0 5px;
+    transition: max-height 0.3s ease-out, opacity 0.2s ease-out, margin-top 0.3s ease;
+}
+
+.lang-card.active {
+    border-color: #ff4081;
+    background-color: #fff9fa;
+    box-shadow: 0 0 10px rgba(255, 64, 129, 0.2);
+}
+
+.lang-card.active .lang-desc {
+    max-height: 120px;
+    opacity: 1;
+    margin-top: 10px;
+}
+
+/* --- Estilo do Botão de Modo Escuro --- */
+#btn-dark-mode {
+    background-color: #e91e63;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 0 8px rgba(233, 30, 99, 0.3);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+#btn-dark-mode:hover {
+    background-color: #d81b60;
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(233, 30, 99, 0.5);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.header-main {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* --- TEMA ESCURO (Dark Cyber-Neon Rosa) --- */
+body.dark-mode {
+    background-color: #0f080f; /* Preto arroxeado super profundo */
+    color: #fce4ec; /* Texto claro levemente rosado */
+}
+
+body.dark-mode header, 
+body.dark-mode main section, 
+body.dark-mode footer {
+    background-color: #1a0d1a; /* Fundo dos blocos escuro e sombrio */
+    /* Neon forte e imersivo em volta dos blocos */
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.25), inset 0 0 10px rgba(255, 0, 127, 0.05);
+}
+
+body.dark-mode header h1 {
+    color: #ff007f; /* Hot Pink puríssimo */
+    /* Efeito de Letreiro Neon brilhando */
+    text-shadow: 0 0 5px #ff007f, 0 0 15px rgba(255, 0, 127, 0.6);
+}
+
+body.dark-mode h2 {
+    color: #ff3399;
+    border-bottom-color: #3d143d;
+    text-shadow: 0 0 8px rgba(255, 51, 153, 0.4);
+}
+
+body.dark-mode .instrucao {
+    color: #b388ff;
+}
+
+body.dark-mode .lang-card {
+    background-color: #251225;
+    border-color: #4a154a;
+}
+
+body.dark-mode .lang-card span {
+    color: #ffffff;
+}
+
+body.dark-mode .lang-card:hover {
+    border-color: #ff007f;
+    /* Explosão de neon rosa ao passar o mouse na caixinha */
+    box-shadow: 0 0 18px rgba(255, 0, 127, 0.8), inset 0 0 8px rgba(255, 0, 127, 0.4);
+    transform: translateY(-3px);
+}
+
+body.dark-mode .lang-card.active {
+    background-color: #311431;
+    border-color: #ff007f;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);
+}
+
+body.dark-mode .lang-desc {
+    color: #f8bbd0;
+}
+
+body.dark-mode #btn-dark-mode {
+    background-color: #ff007f;
+    color: #ffffff;
+    /* Brilho neon intenso no botão do modo escuro */
+    box-shadow: 0 0 15px #ff007f, 0 0 5px #ffffff;
+}
+
+body.dark-mode #btn-dark-mode:hover {
+    background-color: #ff3399;
+}
+
+body.dark-mode a {
+    color: #ff66b2;
+    text-shadow: 0 0 5px rgba(255, 102, 178, 0.3);
+}
+
+body.dark-mode a:hover {
+    color: #ff007f;
+}

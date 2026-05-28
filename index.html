@@ -4,37 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio | Luiza Assis</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>Luiza Assis</h1>
-        <p>Desenvolvedora Full-Stack em formação</p>
+        <div class="header-main">
+            <img src="foto-perfil.jpg" alt="Foto de Luiza Assis" class="profile-img">
+            <div class="header-text">
+                <h1>Luiza Assis</h1>
+                <p>Desenvolvedora Full-Stack em formação</p>
+            </div>
+        </div>
+        <button id="btn-dark-mode" onclick="toggleDarkMode()">🌙 Modo Escuro</button>
     </header>
 
     <main>
         <section id="sobre-mim">
             <h2>Quem Sou Eu</h2>
             <p>
-                Olá! Meu nome é Luiza Assis e sou uma desenvolvedora full-stack apaixonada por criar soluções inovadoras e eficientes. Estou sempre buscando aprender e aprimorar minhas habilidades para entregar projetos de alta qualidade e prontos para os desafios do mercado de trabalho.
+                Olá mundo! Meu nome é Luiza Assis e sou uma desenvolvedora full-stack apaixonada por criar soluções inovadoras e eficientes. Estou sempre buscando aprender e aprimorar minhas habilidades para entregar projetos de alta qualidade e prontos para os desafios do mercado de trabalho.
             </p>
         </section>
 
         <section id="habilidades">
-            <h2>Habilidades</h2>
-            <ul class="tags">
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript (ES6+)</li>
-                <li>React</li>
-                <li>Node.js</li>
-                <li>Git & GitHub</li>
-                <li>PHP</li>
-                <li>Laravel</li>
-                <li>MySQL</li>
+            <h2>Linguagens e Tecnologias</h2>
+            <p class="instrucao">💡 Clique em um card para saber mais sobre minha experiência.</p>
+            
+            <div class="grid-linguagens">
+                <div class="lang-card" onclick="toggleCard(this)">
+                    <i class="devicon-python-plain colored"></i>
+                    <span>Python</span>
+                    <p class="lang-desc">Linguagem versátil que utilizo para automação de tarefas e desenvolvimento de scripts eficientes.</p>
+                </div>
 
-            </ul>
+                <div class="lang-card" onclick="toggleCard(this)">
+                    <i class="devicon-java-plain colored"></i>
+                    <span>Java</span>
+                    <p class="lang-desc">Linguagem robusta e orientada a objetos, ideal para a construção de sistemas seguros e escaláveis.</p>
+                </div>
+
+                <div class="lang-card" onclick="toggleCard(this)">
+                    <i class="devicon-html5-plain colored"></i>
+                    <span>HTML5</span>
+                    <p class="lang-desc">Domínio na estruturação semântica de páginas web, garantindo acessibilidade e SEO.</p>
+                </div>
+
+                <div class="lang-card" onclick="toggleCard(this)">
+                    <i class="devicon-css3-plain colored"></i>
+                    <span>CSS3</span>
+                    <p class="lang-desc">Criação de layouts modernos e totalmente responsivos utilizando Flexbox e Grid.</p>
+                </div>
+
+                <div class="lang-card" onclick="toggleCard(this)">
+                    <i class="devicon-javascript-plain colored"></i>
+                    <span>JavaScript</span>
+                    <p class="lang-desc">Uso para trazer dinamismo ao front-end, interatividade e manipulação do DOM.</p>
+                </div>
+
+                <div class="lang-card" onclick="toggleCard(this)">
+                    <i class="devicon-mysql-plain colored"></i>
+                    <span>MySQL</span>
+                    <p class="lang-desc">Modelagem, manipulação e gerenciamento de bancos de dados relacionais através de queries.</p>
+                </div>
+
+                <div class="lang-card" onclick="toggleCard(this)">
+                    <i class="devicon-php-plain colored"></i>
+                    <span>PHP</span>
+                    <p class="lang-desc">Desenvolvimento no lado do servidor (back-end), lidando com processamento de dados e APIs.</p>
+                </div>
+
+                <div class="lang-card" onclick="toggleCard(this)">
+                    <i class="devicon-laravel-original colored"></i>
+                    <span>Laravel</span>
+                    <p class="lang-desc">Framework PHP focado em produtividade e elegância, facilitando o uso do padrão MVC.</p>
+                </div>
+            </div>
         </section>
 
         <section id="projetos">
@@ -59,8 +105,8 @@
             <h2>Contato</h2>
             <ul class="lista-contatos">
                 <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/seu-perfil" target="_blank">linkedin.com/in/seu-perfil</a></li>
-                <li><strong>GitHub:</strong> <a href="https://github.com/seu-usuario" target="_blank">github.com/seu-usuario</a></li>
-                <li><strong>E-mail:</strong> <a href="mailto:seu.email@exemplo.com">seu.email@exemplo.com</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/LuizaAssiS57" target="_blank">github.com/LuizaAssiS57</a></li>
+                <li><strong>E-mail:</strong> <a href="mailto:luizaassis57@gmail.com">luizaassis57@gmail.com</a></li>
             </ul>
         </section>
     </main>
@@ -73,9 +119,7 @@
         </p>
     </footer>
 
-    <script>
-        document.getElementById('ano-atual').textContent = new Date().getFullYear();
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
