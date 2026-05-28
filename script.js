@@ -1,8 +1,10 @@
+// Mantém o ano do rodapé atualizado automaticamente
 document.getElementById('ano-atual').textContent = new Date().getFullYear();
 
-// Controla a abertura e fechamento dos mini cards de tecnologias
-function toggleCard(card) {
-    card.classList.toggle('active');
+// Controla a abertura e fechamento das descrições de tecnologias
+function toggleCard(item) {
+    // Alterna a classe active no item clicado
+    item.classList.toggle('active');
 }
 
 // Controla a alternância do Modo Escuro
